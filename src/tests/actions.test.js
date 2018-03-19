@@ -22,12 +22,12 @@ const superHero1 = [{
 describe('actions', () => {
     test('should load  heros', () => {
 
-      const expectedAction = { type: 'LOAD_HEROS', payload: { data: superHeros1 } };
+      const expectedAction = { type: 'HEROS_LOADED', payload: { data: superHeros1 } };
       expect(actions.loadHeros(superHeros1)).toEqual(expectedAction);
     });
     test('should load one hero', () => {
 
-        const expectedAction = { type: 'LOAD_HERO', payload: { data: superHero1 } };
+        const expectedAction = { type: 'HERO_LOADED', payload: { data: superHero1 } };
         expect(actions.loadHero(superHero1)).toEqual(expectedAction);
       });
   
