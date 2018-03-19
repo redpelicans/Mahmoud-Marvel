@@ -9,8 +9,8 @@ const hash = md5(concatin);
 
 
 
-export const LOAD_HEROS = "LOAD_HEROS";
-export const loadHeros = (data) => ({ type: LOAD_HEROS, payload: { data } })
+export const HEROS_LOADED = "HEROS_LOADED";
+export const loadHeros = (data) => ({ type: HEROS_LOADED, payload: { data } })
 
 
 export const getHeros = () => (dispatch) => axios.get(`http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
@@ -18,8 +18,8 @@ export const getHeros = () => (dispatch) => axios.get(`http://gateway.marvel.com
     .catch(err => console.log(err))
 
 
-export const LOAD_HERO = "LOAD_HERO";
-export const loadHero = (data) => ({ type: LOAD_HERO, payload: { data } })
+export const HERO_LOADED = "HERO_LOADED";
+export const loadHero = (data) => ({ type: HERO_LOADED, payload: { data } })
 
 export const getHero = (id) => (dispatch) => axios.get(`http://gateway.marvel.com/v1/public/characters/${id}?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
     .then(({ data }) => dispatch(loadHero(data.data.results)))

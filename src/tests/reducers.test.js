@@ -14,12 +14,12 @@ const superHeros1= [{
     event: 'events',}
 ];
 
-  const superHero1 = [{
+  const superHero1 = {
     id: 12,
     name: 'thor',
     description: 'description',
     event: 'events'
-  }]
+  }
 
 describe('reducer', () => {
     test('should return superHeros', () => {
@@ -29,7 +29,7 @@ describe('reducer', () => {
       expect(reducer(initilaState, actions.loadHeros(superHeros1))).toEqual(expectedState);
     });
     test('should return superHero Detail', () => {
-        const initilaState = { superHero:[] ,pageId:"heros"};
+        const initilaState = { superHero:{},pageId:"heros"};
         const expectedState = { superHero: superHero1,pageId:"hero"};
         deepFreeze(initilaState);
         expect(reducer(initilaState, actions.loadHero(superHero1))).toEqual(expectedState);
