@@ -12,12 +12,12 @@ const superHeros1= [{
     event: 'events'
 }];
 
-const superHero1 = [{
+const superHero1 = {
     id: 12,
     name: 'thor',
     description: 'description',
     event: 'events'
-  }]
+  }
 
 describe('actions', () => {
     test('should load  heros', () => {
